@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Main from '../views/Main.vue'
-import Home from '../views/Home.vue'
-import About from '../views/About.vue'
-import User from '../views/User.vue'
+import Message from '../views/Message.vue'
+import Contact from '../views/Contact.vue'
+import Watching from '../views/Watching.vue'
+import Dynamic from '../views/Dynamic.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 
@@ -14,26 +15,31 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/home'
+      redirect: '/message'
     },
     {
       path: '/',
       component: Main,
       children: [
         {
-          path: 'home',
-          name: 'home',
-          component: Home
+          path: 'message',
+          name: 'message',
+          component: Message
         },
         {
-          path: 'about',
-          name: 'about',
-          component: About
+          path: 'contact',
+          name: 'contact',
+          component: Contact
         },
         {
-          path: 'user',
-          name: 'user',
-          component: User
+          path: 'watching',
+          name: 'watching',
+          component: Watching
+        },
+        {
+          path: 'dynamic',
+          name: 'dynamic',
+          component: Dynamic
         },
         {
           path: 'login',
@@ -49,7 +55,7 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: '/home'
+      redirect: '/message'
     }
   ]
 })

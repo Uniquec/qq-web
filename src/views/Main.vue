@@ -2,9 +2,10 @@
   <div>
     <router-view/>
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="home" :to="{name: 'home'}">主页</van-tabbar-item>
-      <van-tabbar-item icon="gift" dot :to="{name: 'about'}">发现</van-tabbar-item>
-      <van-tabbar-item icon="contact" info="5" :to="{name: 'user'}">我的</van-tabbar-item>
+      <van-tabbar-item icon="chat" :to="{name: 'message'}">消息</van-tabbar-item>
+      <van-tabbar-item icon="contact" dot :to="{name: 'contact'}">联系人</van-tabbar-item>
+      <van-tabbar-item icon="browsing-history" info="5" :to="{name: 'watching'}">看点</van-tabbar-item>
+      <van-tabbar-item icon="like-o" info="5" :to="{name: 'dynamic'}">动态</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
@@ -16,11 +17,12 @@ import Vue from 'vue'
 Vue.use(Tabbar).use(TabbarItem)
 
 let active = {
-  '/home': 0,
-  '/about': 1,
-  '/user': 2,
-  '/login': 2,
-  '/register': 2
+  '/message': 0,
+  '/contact': 1,
+  '/watching': 2,
+  '/dynamic': 3,
+  '/login': 4,
+  '/register': 5
 }
 export default {
   data() {
