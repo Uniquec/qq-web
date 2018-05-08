@@ -2,15 +2,14 @@
   <div class="title-box">
     <img src="@/assets/logo.png">
     <div class="title">消息</div>
-    <div class="right-tips">{{tips}}</div>
+    <div class="right-tips">+</div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "PageTitle",
+    name: "MessagePageTitle",
     props: {
-      tips:String
     }
   };
 </script>
@@ -21,7 +20,9 @@
     background-color: deepskyblue;
     border: 1px solid deepskyblue;
     color: white;
+    width: 100%;
     display: flex;
+    justify-content: space-between;
 
     img{
       margin: 10px;
@@ -34,13 +35,12 @@
     .title{
       font-size: 20px;
       margin-top: 12px;
-      margin-left: 110px;
     }
 
     .right-tips{
-      font-size: 40px;
+      font-size: 38px;
       margin-top: 6px;
-      margin-left: 130px;
+      margin-right: 10px;
     }
   }
 </style>

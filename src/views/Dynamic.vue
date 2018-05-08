@@ -1,16 +1,20 @@
 <template>
   <div>
-    <page-title :tips="'更多'"></page-title>
+    <dynamic-page-title></dynamic-page-title>
+    <searchbox :content="'大家都在搜：马布里 中国绿卡'"></searchbox>
   </div>
 </template>
 
 <script>
-  import PageTitle from "../components/PageTitle.vue";
+
+  import DynamicPageTitle from "../components/DynamicPageTitle.vue";
+  import Searchbox from "../components/Searchbox.vue";
 
   export default {
     name: 'Dynamic',
     components: {
-      PageTitle,
+      Searchbox,
+      DynamicPageTitle
     },
     methods: {}
   }

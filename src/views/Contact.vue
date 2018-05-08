@@ -1,17 +1,20 @@
 <template>
   <div>
-    <page-title :tips="'添加'"></page-title>
+    <contact-page-title></contact-page-title>
+    <searchbox :content="'搜索'"></searchbox>
   </div>
 </template>
 
 <script>
-  import PageTitle from "../components/PageTitle.vue";
 
+  import ContactPageTitle from '../components/ContactPageTitle.vue'
+  import Searchbox from "../components/Searchbox.vue";
 
   export default {
     name: 'Contact',
     components: {
-      PageTitle,
+      Searchbox,
+      ContactPageTitle,
     },
     methods: {}
   }
