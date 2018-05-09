@@ -4,7 +4,7 @@
     <van-tabbar v-model="active">
       <van-tabbar-item icon="chat" :to="{name: 'message'}">消息</van-tabbar-item>
       <van-tabbar-item icon="contact" dot :to="{name: 'contact'}">联系人</van-tabbar-item>
-      <van-tabbar-item icon="browsing-history" :to="{name: 'watching'}">看点</van-tabbar-item>
+      <van-tabbar-item icon="password-view" :to="{name: 'watching'}">看点</van-tabbar-item>
       <van-tabbar-item icon="like-o" info="5" :to="{name: 'dynamic'}">动态</van-tabbar-item>
     </van-tabbar>
   </div>

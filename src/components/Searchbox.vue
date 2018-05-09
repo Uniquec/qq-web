@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="search-box">
+  <div class="search-box">
+    <div class="search">
       <van-icon name="search"/>
       {{content}}
     </div>
@@ -24,15 +24,20 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   .search-box{
-    width: 97%;
-    height: 27px;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding-top: 4px;
-    background-color: #ededed;
-    border: 1px solid #ededed;
-    border-radius: 5px;
-    color: darkgrey;
+    background-color: #fff;
+    padding-bottom: 4px;
+    .search{
+      width: 95%;
+      height: 27px;
+      margin: auto;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-top: 4px;
+      background-color: #F5F5F5;
+      border: 1px solid #F5F5F5;
+      border-radius: 5px;
+      color: darkgrey;
+    }
   }
+
 </style>

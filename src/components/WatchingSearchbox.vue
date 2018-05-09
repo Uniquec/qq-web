@@ -40,8 +40,8 @@
       height: 25px;
       margin: 5px;
       padding-top: 6px;
-      background-color: #ededed;
-      border: 1px solid #ededed;
+      background-color: #F5F5F5;
+      border: 1px solid #F5F5F5;
       border-radius: 20px;
       color: darkgrey;
       font-size: 14px;
