@@ -1,6 +1,6 @@
 <template>
   <div class="title-box">
-    <img src="@/assets/logo.png">
+    <img src="@/assets/head.jpg">
     <div class="title">联系人</div>
     <div class="right-tips">添加</div>
   </div>

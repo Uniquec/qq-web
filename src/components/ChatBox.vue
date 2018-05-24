@@ -1,6 +1,6 @@
 <template>
   <div class="chat-box">
-    <img src="@/assets/logo.png">
+    <img src="@/assets/dreamhuan.jpg">
     <div class="name-and-words">
       <h3>{{name}}</h3>
       <span>{{words}}</span>

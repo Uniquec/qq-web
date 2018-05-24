@@ -1,6 +1,6 @@
 <template>
   <div class="title-box">
-    <img  class="head-portrait" src="@/assets/logo.png">
+    <img  class="head-portrait" src="@/assets/head.jpg">
     <div class="title">
       看点
       <img class="more-watching" src="@/assets/icon_Triangle_down.png"/>

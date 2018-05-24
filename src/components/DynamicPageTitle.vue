@@ -1,6 +1,6 @@
 <template>
   <div class="title-box">
-    <img src="@/assets/logo.png">
+    <img src="@/assets/head.jpg">
     <div class="title">动态</div>
     <div class="right-tips">更多</div>
   </div>
