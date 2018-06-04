@@ -1,11 +1,12 @@
 import axios from 'axios'
-import { hostip } from '@/config.js'
+import {hostip} from '@/config.js'
 
 const state = {
+  uid: '',
   login_name: '',
   login_pwd: '',
-  login_token: ''
-}
+  login_token: '',
+};
 
 const getters = {
   currentUser: state => {
@@ -14,28 +15,32 @@ const getters = {
       token: state.login_token
     }
   }
-}
+};
 
 const mutations = {
   getLocalUser(state) {
-    state.login_name = localStorage.getItem('name')
-    state.login_token = localStorage.getItem('token')
+    state.login_name = localStorage.getItem('name');
+    state.login_token = localStorage.getItem('token');
+    state.uid = localStorage.getItem('uid');
   },
   setUser(state, payload) {
-    state.login_name = payload.name
-    state.login_token = payload.token
+    state.login_name = payload.name;
+    state.login_token = payload.token;
+    state.uid = payload.uid;
   },
   logout(state) {
-    localStorage.removeItem('name')
-    localStorage.removeItem('token')
-    state.login_name = ''
-    state.login_token = ''
+    localStorage.removeItem('name');
+    localStorage.removeItem('token');
+    localStorage.removeItem('uid');
+    state.login_name = '';
+    state.login_token = '';
+    state.uid = '';
   }
-}
+};
 
 const actions = {
-  login({ commit }, payload) {
-    console.log(payload)
+  login({commit}, payload) {
+    console.log(payload);
     return axios
       .post(hostip + '/iv1/user/login', {
         name: payload.name,
@@ -43,35 +48,38 @@ const actions = {
       })
       .then(res => res.data.returnValue)
       .then(value => {
-        console.log(value)
-        localStorage.setItem('name', value.name)
-        localStorage.setItem('token', value.token)
+        console.log(value);
+        localStorage.setItem('name', value.name);
+        localStorage.setItem('token', value.token);
+        localStorage.setItem('uid',value.uid);
         commit({
           type: 'setUser',
           name: value.name,
-          token: value.token
+          token: value.token,
+          uid: value.uid
         })
       })
   },
-  register({ commit }, payload) {
+  register({commit}, payload) {
     return axios
       .post(hostip + '/iv1/user/register', {
         name: payload.name,
         pwd: payload.pwd
       })
       .then(res => {
-        console.log(res)
-        localStorage.setItem('name', res.data.name)
-        localStorage.setItem('token', res.data.token)
-
+        console.log(res);
+        localStorage.setItem('name', res.data.name);
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('uid',res.data.uid);
         commit({
           type: 'setUser',
           name: res.data.name,
-          token: res.data.token
+          token: res.data.token,
+          uid:res.data.uid
         })
       })
   }
-}
+};
 
 export default {
   namespaced: true,

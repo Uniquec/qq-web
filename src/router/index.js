@@ -8,6 +8,7 @@ import Watching from '../views/Watching.vue'
 import Dynamic from '../views/Dynamic.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import Chatting from '../views/Chatting.vue'
 
 Vue.use(Router)
 
@@ -52,6 +53,10 @@ export default new Router({
           component: Register
         }
       ]
+    },
+    {
+      path: '/chatting',
+      component: Chatting
     },
     {
       path: '*',
