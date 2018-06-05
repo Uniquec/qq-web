@@ -49,25 +49,25 @@ export default {
   computed: {},
   methods: {
     showPwd: function() {
-      this.isShow = this.isShow ? 0 : 1
+      this.isShow = this.isShow ? 0 : 1;
       this.isShow ? (this.passType = 'text') : (this.passType = 'password')
     },
     beforeSubmit: function() {
-      this.isDisabled = true
+      this.isDisabled = true;
       this.loginState = '正在登录...'
     },
     onSuccess: function(res) {
-      console.log(res)
+      console.log(res);
       this.$router.push({ name: 'user' })
     },
     onError: function(err) {
-      console.log(err)
-      this.error = err.body.error
-      this.loginState = '登录'
+      console.log(err);
+      this.error = err.body.error;
+      this.loginState = '登录';
       this.isDisabled = false
     },
     onSubmit: function() {
-      this.beforeSubmit()
+      this.beforeSubmit();
       this.$store
         .dispatch({
           type: 'user/login',
@@ -76,11 +76,11 @@ export default {
         })
         .then(
           res => {
-            console.log(res)
+            console.log(res);
             this.onSuccess(res)
           },
           err => {
-            console.log(err)
+            console.log(err);
             this.onError(err)
           }
         )

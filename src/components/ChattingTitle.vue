@@ -1,6 +1,6 @@
 <template>
   <div class="title-box">
-    <div class="back-box">
+    <div class="back-box" @click="back()">
       <van-icon name="arrow-left" class="back-icon"/>
     </div>
     <div class="center-message">
@@ -24,6 +24,11 @@
     props: {
       nickname: String,
       state: String
+    },
+    methods:{
+      back(){
+        this.$router.push({path: '/message'})
+      }
     }
   };
 </script>

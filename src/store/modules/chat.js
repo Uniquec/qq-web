@@ -50,7 +50,20 @@ const getters = {
     return _.orderBy(talk.chats, 'time');
   },
   listChat(state){
-
+    let listtalk = [];
+    for (let talker of state.allChats){
+      let t = {};
+      t.name = talker.talkerName;
+      t.img = talker.talkerImg;
+      t.time = talker.chats.time;
+      t.msg = talker.chats.msg;
+      for(let chat of talker.chats){
+        if (chat.time > t.time){
+          t.time = chat.time;
+          t.msg = chat.msg;
+        }
+      }
+    }
   }
 };
 
